@@ -1,6 +1,8 @@
 from flask import Flask, request, render_template, redirect, url_for, flash, session
 import logging
 from logging.handlers import RotatingFileHandler
+
+
 app = Flask(__name__)
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -43,6 +45,6 @@ if __name__ == '__main__':
     # logging
     handler = RotatingFileHandler('error.log', maxBytes=1000, backupCount=1)
     handler.setLevel(logging.INFO)
-    app.logger.addHandler(handler)
+    app.logger.addHandler (handler)
     app.debug = True
     app.run()
